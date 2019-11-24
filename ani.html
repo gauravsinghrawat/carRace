@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            
+        }
+        .sky{
+            position:absolute;
+            width: 500%;
+            height: 57%;
+            top: 0;
+            left: 0;
+            background: url(sky.png) repeat;
+            z-index: 20;
+            animation: right 10s linear infinite;
+        }
+        @keyframes right{
+           
+            100%{
+                 transform: translateX(-1000px);
+            }
+        }
+      .wrapper .steel{
+            position: absolute;
+            width: 150%;
+            height: 100%;
+          left: -70px;
+          bottom: -200px;
+          z-index: 21;
+          animation: right 10s linear infinite;
+        }
+        .steel img{
+            width: 110%;
+            height: 30%;
+            background: repeat;
+        }
+        #road{
+            position: absolute;
+            width: 500%;
+            height: 100%;
+            background: url(road.png) repeat;
+            animation: road 1s linear infinite;
+            bottom: 0;
+            z-index: 10;
+           
+        }
+     
+        @keyframes road{
+            
+            100%{
+                 transform: translateX(-2000px);
+                filter: brightness(1.5);
+            }
+        }
+        #stone{
+            position: absolute;
+            top: 50%;
+            width: 200px;
+            animation: stone 2s linear infinite;
+            z-index: 21;
+        }
+        @keyframes stone{
+           from{
+                transform: translateX(1600px);
+            }
+          
+        }
+      /* car 1*/
+        .car{
+            position: absolute;
+            width: 450px; 
+            left: 10%;
+            bottom: 100px;
+            z-index: 22;
+            animation: up 3s ease-in-out infinite;
+        }
+        .car img{
+            width: 100%;
+        }
+        @keyframes up{
+       
+               0%{
+                transform: translateY(-30px)rotate(-10deg)translateX(-200px)scale(1.5);
+            }
+            40%{
+                transform: translateY(-40px)translateX(1000px)scale(1.5);
+            }
+          /*  70%{ transform: rotate(-20deg);}*/
+            100%{
+                transform: translateY(-20px)/*rotate(20deg)*/scale(1.5);
+            }
+        }
+        .wheel{
+            position: absolute;
+            left: 45%;
+            transform: translateX(-50%);
+            bottom: 218px;
+            z-index: 23;
+        }
+        .wheel img{
+            width: 60px;
+            height: 60px;
+        }
+        .wheel .wheelback{
+            top: 105px;
+            left: -125px;
+            position: absolute;
+             animation: wheel .3s linear infinite;
+        }
+         .wheel .wheelfront{
+             top:110px;
+           left: 105px;
+            position: absolute;
+             animation: wheel .3s linear infinite;
+        }
+        @keyframes wheel{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+      
+        /* ************************CAR 2*******************************************/
+       .car2{
+            position: absolute;
+            width: 500px; 
+            left: 0;
+            bottom: 0;
+            z-index: 22;
+            animation: up1 10s ease-in-out infinite;
+        }
+        .car2 img{
+            width: 100%;
+        }
+        @keyframes up1{
+            0%{
+                transform: translateX(-300px)scale(1.2);
+            }
+            10%{
+                transform: translateY(-40px)rotate(-20deg)scale(1.1) ;
+            }
+            50%{
+                transform: translateY(0px)translateX(900px)scale(1.4);
+            }
+            100%{
+                transform: translateY(20px)rotate(20deg);
+            }
+        }
+           .wheel2{
+            position: absolute;
+            left: 45%;
+            transform: translateX(-50%);
+            bottom: 218px;
+            z-index: 23;
+        }
+        .wheel2 img{
+            width: 75px;
+            height: 75px;
+        }
+        .wheel2 .wheelback1{
+            top: 55px;
+            left: -138px;
+            position: absolute;
+             animation: wheel .3s linear infinite;
+        }
+         .wheel2 .wheelfront1{
+             top:55px;
+           left: 135px;
+            position: absolute;
+             animation: wheel2 .3s linear infinite;
+        }
+         @keyframes wheel2{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        #car{
+            animation: nn .8s linear infinite;
+        }
+        @keyframes nn {
+            90%{transform: translateY(-3px);}
+             70%{transform: translateY(0px);}
+             40%{transform: translateY(5px);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+      <div class="sky"></div>
+      <div class="steel"><img src="steel.png" alt=""></div>
+       <div id="road"> </div>
+       <img src="road.png" alt="" id="road">
+       <img src="river-rock-2.png" alt="" id="stone">
+       <!--first car-->
+       <div class="car">
+       <img src="AVENTADOR-S-COUPE-arancio-atlas-SIDE.png" alt="" id="car">
+        <!--first car wheels-->
+       <div class="wheel">
+              <img src="car_wheel_PNG23306.png" alt="" class="wheelback">
+             <img src="car_wheel_PNG23306.png" alt="" class="wheelfront">
+        </div>
+        </div>
+      
+        <!--second car-->
+      <div class="car2">
+       <img src="merce.png" alt="" id="car">
+        <!--first car wheels-->
+       <div class="wheel2">
+              <img src="car_wheel_PNG23306.png" alt="" class="wheelback1">
+             <img src="car_wheel_PNG23306.png" alt="" class="wheelfront1">
+        </div>
+        </div>
+       
+    </div>
+</body>
+</html>
